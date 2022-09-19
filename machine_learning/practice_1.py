@@ -14,3 +14,4 @@ print(X_train.shape)                    #.shape表示資料的維度
 print(X_test.shape)
 print(y_train.shape)
 print(y_test.shape)
+

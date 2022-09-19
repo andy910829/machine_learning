@@ -13,7 +13,9 @@ data = pd.read_csv('knn\car.data')
 X = data[[
     'buying',
     'maint',
-    'safty'
+    'safty',
+    'doors',
+    'lug_boot'
 ]].values          #X,y皆為二維陣列
 y = data[['class']]
 #print(y)
@@ -42,13 +44,17 @@ y = np.array(y)
 
 #create model
 
-knn = neighbors.KNeighborsClassifier(n_neighbors=25, weights='uniform') #n_neighbors: 一個整數，指定k值; 
+knn = neighbors.KNeighborsClassifier(n_neighbors=25, weights='uniform')   #n_neighbors: 一個整數，指定k值; 
 #weight：一個字符串或者可調用對象，指定投票權重類型。也就是這些鄰居投票可以相同或者不同（uniform：本節點的所有鄰居節點的投票權重都相等。
 #distance:本節點的所有鄰居節點的投票權重和距離成反比。callable：一個可調用對象，他傳入距離的數組，返回同樣形狀的數組）。
 #https://twgreatdaily.com/BGKX7W4BMH2_cNUgFg2t.html
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)  #X_train是題目，y_train是解答，X_test是考試，y_test是考試的答案
 knn.fit(X_train, y_train)
 prediction = knn.predict(X_test)
 accuracy = metrics.accuracy_score(y_test, prediction)
 print('prediction: ', prediction)
 print('accuracy: ', accuracy)
+
+a = 100
+print('actual value: ', y[a])
+print('predicted value: ', knn.predict(X)[a])
