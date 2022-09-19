@@ -14,4 +14,4 @@
 >1.調整X中的訓練取樣數據會影響最終的準確度  
 >2.調整` knn = neighbors.KNeighborsClassifier(n_neighbors=25, weights='uniform') `的參數也會影響最終的準確度
 ## knn公式:  
-> $$ d(x,y) = \sqrt{\sum_{i=1}^{n}(y_i-x_i)^{2}  }
+>  d(x,y) = \sqrt{\sum_{i=1}^{n}(y_i-x_i)^{2}  }
