@@ -10,9 +10,13 @@
 ## knn.py的主要功能是依據:
 >[ 數據來源 ](https://archive.ics.uci.edu/ml/datasets/car+evaluation)中提供的數據中用` buying ` , ` maint ` , ` doors ` , ` persons ` , ` lug_boot ` , `safty`來訓練模型判斷` class `，而` class `是接受度高不高，也就是這種型態的車受不受歡迎。
 ## 筆記:  
-> 在knn.py中:  
+>+ 在knn.py中:  
 >1.調整X中的訓練取樣數據會影響最終的準確度  
->2.調整` knn = neighbors.KNeighborsClassifier(n_neighbors=25, weights='uniform') `的參數也會影響最終的準確度
-## knn公式:  
+>2.調整` knn = neighbors.KNeighborsClassifier(n_neighbors=25, weights='uniform') `的參數也會影響最終的準確度  
+>+ 線性迴歸(linear regression)與邏輯迴歸(logistic)  
+> 1.線性迴歸是用來預測一個連續的值，目標是想找一條直線可以逼近真實  的資料。  
+> 2.邏輯迴歸是用來處理分類問題，目標是找到一條直線可以將資料做分類
+> [資料來源](https://ithelp.ithome.com.tw/articles/10269006)
 
-> $$ d(x,y) = \sqrt{\sum_{i=1}^{n}(y_i-x_i)^{2}  } $$
+## knn公式:  
+> $$ d(x,y) = \sqrt{\sum_{i=1}^{n}(y_i-x_i)^{2}} $$  
